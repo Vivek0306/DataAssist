@@ -149,7 +149,7 @@ Agent: There are 3 order statuses — Fulfilled (F) leads with ~730K orders,
 ### Installation
 
 ```bash
-git clone https://github.com/your-username/data-assist.git
+git clone https://github.com/Vivek0306/DataAssist.git
 cd data-assist
 python -m venv venv
 source venv/bin/activate
