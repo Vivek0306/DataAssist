@@ -1,0 +1,3 @@
+select (SELECT COUNT(1) as raw_customer_count FROM retail_raw.CUSTOMER), (SELECT COUNT(1) as staging_customer_count FROM retail_staging.CUSTOMER);
+select (SELECT COUNT(1) as raw_orders_count FROM retail_raw.ORDERS), (SELECT COUNT(1) as raw_orders_count FROM retail_staging.ORDERS);
+select (SELECT COUNT(1) as raw_lineitem_count FROM retail_raw.LINEITEM), (SELECT COUNT(1) as raw_lineitem_count FROM retail_staging.LINEITEM);

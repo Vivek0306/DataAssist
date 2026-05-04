@@ -1,0 +1,22 @@
+{
+  "domain": "Retail Supply Chain (TPC-H benchmark)",
+
+  "encoded_values": {
+    "orders.o_orderstatus": {"O": "Open", "F": "Fulfilled", "P": "In Progress"},
+    "lineitem.l_returnflag": {"R": "Returned", "A": "Accepted", "N": "Not yet shipped"},
+    "lineitem.l_linestatus": {"O": "Open", "F": "Fulfilled"}
+  },
+
+  "derived_metrics": {
+    "net_revenue": "l_extendedprice * (1 - l_discount)",
+    "revenue_after_tax": "l_extendedprice * (1 - l_discount) * (1 + l_tax)",
+    "is_late_shipment": "l_shipdate > l_commitdate"
+  },
+
+  "gotchas": [
+    "l_discount and l_tax are decimals not percentages — 0.05 means 5%",
+    "l_extendedprice is gross price — always apply discount to get net revenue",
+    "l_partkey and l_suppkey together form a composite FK to partsupp — never join on either column alone",
+    "c_acctbal and s_acctbal can be negative — do not filter them out in averages"
+  ]
+}
